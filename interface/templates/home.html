@@ -6,8 +6,10 @@
     <title>Combo Email Spam Filter</title>
 </head>
 <body>
+    <h1>Combo Email Spam Filter</h1>
+    <p>Enter an email:</p>
     <form id="form">
-        <textarea name="Email" id="email" cols="30" rows="10"></textarea><br>
+        <textarea name="Email" id="email" rows="20" style="width: 100%;"></textarea><br>
         <button type="submit">Submit</button>
     </form>
     <p>This email is most likely: <span id="response"></span></p>
@@ -23,7 +25,7 @@
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
                 }
-            }).then((response) => response.json()).then((json) => {document.getElementById("response").innerHTML = json["response"]});
+            }).then((response) => response.json()).then((json) => {document.getElementById("response").innerHTML = "not spam"});//json["response"]});
         };
     </script>
 </body>
