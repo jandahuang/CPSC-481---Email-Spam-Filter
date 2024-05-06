@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo Email Spam Filter</title>
+</head>
+<body>
+    <form id="form">
+        <textarea name="Email" id="email" cols="30" rows="10"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+    <p>This email is most likely: <span id="response"></span></p>
+
+    <script>
+        document.getElementById("form").onsubmit = function (event) {
+            event.preventDefault();
+            fetch("/email", {
+                method: "POST",
+                body: JSON.stringify({
+                    email: document.getElementById("email").value,
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            }).then((response) => response.json()).then((json) => {document.getElementById("response").innerHTML = json["response"]});
+        };
+    </script>
+</body>
+</html>
