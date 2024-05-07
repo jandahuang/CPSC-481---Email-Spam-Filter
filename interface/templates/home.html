@@ -13,6 +13,14 @@
         <button type="submit">Submit</button>
     </form>
     <p>This email is most likely: <span id="response"></span></p>
+    <ul>
+        <li>Logistic Regression: <span id="lr"></span></li>
+        <li>Naive Bayes: <span id="nb"></span></li>
+        <li>Decision Tree: <span id="dt"></span></li>
+        <li>Support Vector Machine: <span id="svm"></span></li>
+        <li>k-Nearest Neighbors: <span id="knn"></span></li>
+        <li>Random Forest: <span id="rf"></span></li>
+    </ul>
 
     <script>
         document.getElementById("form").onsubmit = function (event) {
@@ -25,7 +33,17 @@
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
                 }
-            }).then((response) => response.json()).then((json) => {document.getElementById("response").innerHTML = json["response"]});
+            })
+            .then((response) => response.json())
+            .then((json) => {
+                document.getElementById("response").innerHTML = json.response;
+                document.getElementById("lr").innerHTML = json.tests.logistic_regression;
+                document.getElementById("nb").innerHTML = json.tests.naive_bayes;
+                document.getElementById("dt").innerHTML = json.tests.decision_tree;
+                document.getElementById("svm").innerHTML = json.tests.support_vector_machine;
+                document.getElementById("knn").innerHTML = json.tests.k_nearest_neighbors;
+                document.getElementById("rf").innerHTML = json.tests.random_forest;
+            });
         };
     </script>
 </body>
