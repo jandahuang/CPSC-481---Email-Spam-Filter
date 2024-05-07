@@ -12,12 +12,12 @@ def hello_world():
 def email():
     # This is where we call the spam filter and return the result in json
     return jsonify({
-            "response": "spam",
+            "response": "not spam",
             "tests": {
-                "logistic_regression": "spam",
+                "logistic_regression": "not spam",
                 "naive_bayes": "spam",
                 "decision_tree": "not spam",
-                "support_vector_machine": "spam",
+                "support_vector_machine": "not spam",
                 "k_nearest_neighbors": "not spam",
                 "random_forest": "spam"
             }
