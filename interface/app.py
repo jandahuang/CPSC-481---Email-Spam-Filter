@@ -1,6 +1,8 @@
 from flask import Flask
 from flask import render_template
 from flask import jsonify
+from flask import request
+from spam_filter import spam_filter
 
 app = Flask(__name__)
 
@@ -10,15 +12,7 @@ def hello_world():
 
 @app.route("/email", methods=["post"])
 def email():
+    data = request.get_json()
     # This is where we call the spam filter and return the result in json
-    return jsonify({
-            "response": "not spam",
-            "tests": {
-                "logistic_regression": "not spam",
-                "naive_bayes": "spam",
-                "decision_tree": "not spam",
-                "support_vector_machine": "not spam",
-                "k_nearest_neighbors": "not spam",
-                "random_forest": "spam"
-            }
-        })
+    return jsonify(spam_filter(data["email"]))
+
