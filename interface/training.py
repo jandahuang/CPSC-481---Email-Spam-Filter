@@ -18,6 +18,7 @@ if not nltk.corpus.stopwords.words('english'):
     nltk.download('stopwords')
 from nltk.corpus import stopwords
 import json
+import re
 warnings.filterwarnings('ignore')
 
 # Preprocessing
