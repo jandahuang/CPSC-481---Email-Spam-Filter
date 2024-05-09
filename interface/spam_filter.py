@@ -25,7 +25,8 @@ def predict(input_text, model_name):
     model = "{}.pkl".format(model_name)
     loaded_model, loaded_vectorizer = load_model_and_vectorizer(model, 'vectorizer.pkl')
     
-    vectorized_data = loaded_vectorizer.transform(input_text)
+    inpput= list(input_text)
+    vectorized_data = loaded_vectorizer.transform(inpput)
     prediction = loaded_model.predict(vectorized_data)
     return prediction
     # if (prediction[0]==1):
@@ -36,12 +37,16 @@ def predict(input_text, model_name):
 # ====================
 # For testing purposes
 # ====================
-#Reading dataset
+# Reading dataset
 # Email_dataset = pd.read_csv("spam_ham_dataset.csv")
+# predict("among us sus among us sus among us sus, I am not sus", "logistic_model")
 
-# predict(["among us sus among us sus among us sus, I am not sus"], "logistic_model")
+# message = string([Email_dataset['text'][4]])
+# print(Email_dataset['text'][4])
 
 # predict([Email_dataset['text'][4]], "logistic_model")
+
+# predict(message, "logistic_model")
 # ====================
 # End of testing block
 # ====================
@@ -76,18 +81,20 @@ def naive_bayes(input_email):
     return total_spam_prob >= total_non_spam_prob
 
 def spam_filter(input_email):
-    # naivebayes_custom = naive_bayes(input_email)
-    # if naivebayes_custom:
-    #     naivebayes_custom = "spam"
-    #     spam_count += 1
-    
-    # else:
-    #     naivebayes_custom = "not spam"
-    #     ham_count += 1
-    
-    
     spam_count = 0
     ham_count = 0
+
+    naivebayes_custom = naive_bayes(input_email)
+    if naivebayes_custom:
+        naivebayes_custom = "spam"
+        spam_count += 1
+    
+    else:
+        naivebayes_custom = "not spam"
+        ham_count += 1
+    
+    
+    
     logistic = predict(input_email, "logistic_model")
     if logistic[0]==1:
         logistic = "not spam"
@@ -146,7 +153,7 @@ def spam_filter(input_email):
             "response": result,
             "tests": {
                 "logistic_regression": logistic,
-                # "naive_bayes_custom": naivebayes_custom,
+                "naive_bayes_custom": naivebayes_custom,
                 "naive_bayes" : bayes, 
                 "decision_tree": decision_tree,
                 "support_vector_machine": support_vector_model,

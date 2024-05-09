@@ -15,6 +15,7 @@
     <p>This email is most likely: <span id="response"></span></p>
     <ul>
         <li>Logistic Regression: <span id="lr"></span></li>
+        <li>naive_bayes_custom: <span id="nbc"></span></li>
         <li>Naive Bayes: <span id="nb"></span></li>
         <li>Decision Tree: <span id="dt"></span></li>
         <li>Support Vector Machine: <span id="svm"></span></li>
@@ -39,6 +40,7 @@
                 document.getElementById("response").innerHTML = json.response;
                 document.getElementById("lr").innerHTML = json.tests.logistic_regression;
                 document.getElementById("nb").innerHTML = json.tests.naive_bayes;
+                document.getElementById("nbc").innerHTML = json.tests.naive_bayes_custom;
                 document.getElementById("dt").innerHTML = json.tests.decision_tree;
                 document.getElementById("svm").innerHTML = json.tests.support_vector_machine;
                 document.getElementById("knn").innerHTML = json.tests.k_nearest_neighbors;
