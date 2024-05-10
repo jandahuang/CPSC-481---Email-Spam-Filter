@@ -52,7 +52,8 @@
 8. Run the server (see the "Run" section)
 
 ## Run
-1. Initiated the Virual Environment (if not already initiated)
+1. Open up your terminal and cd into the `interface` folder (if not already in it)
+2. Initiated the Virual Environment (if not already initiated)
    Windows:
    ```
    .venv\Scripts\activate
@@ -62,7 +63,7 @@
    . .venv/bin/activate
    ```
 
-2. Run Flask (with the virtual environment running)
+3. Run Flask (with the virtual environment running)
    ```
    flask --app app run --debug
    ```
@@ -71,17 +72,17 @@
    flask --app app run --debug
    ```
 
-3. Flask will now start a development server. Once running, it will tell you the URL and port it is running on. It will most likely be [http://127.0.0.1:5000](http://127.0.0.1:5000)
+4. Flask will now start a development server. Once running, it will tell you the URL and port it is running on. It will most likely be [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
-4. Go to the URL in the previous step
+5. Go to the URL in the previous step
 
-5. Enter the email into the text box (some sample emails are provided in the "Test Emails" section) and click "Submit"
+6. Enter the email into the text box (some sample emails are provided in the "Test Emails" section) and click "Submit"
 
-6. The results will be displayed below the submit button along with the result of each algorithm
+7. The results will be displayed below the submit button along with the result of each algorithm
 
-7. To shut down the server, in the terminal Flask is running in, enter CTRL + C (COMMAND + C for macOS)
+8. To shut down the server, in the terminal Flask is running in, enter CTRL + C (COMMAND + C for macOS)
 
-8. To deactivate the virtual enviroment, enter `deactivate` into the terminal with the activated virtual enviroment
+9. To deactivate the virtual enviroment, enter `deactivate` into the terminal with the activated virtual enviroment
 
 
 
