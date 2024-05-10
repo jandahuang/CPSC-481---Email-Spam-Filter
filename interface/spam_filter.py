@@ -124,6 +124,11 @@ def spam_filter(input_email):
     else:
         result = "not spam"
 
+    # if spam_count > ham_count:
+    #     result = 100*(ham_count/spam_count)
+    # else:
+    #     result = 100*(spam_count/ham_count)
+
     return {
             "response": result,
             "tests": {
