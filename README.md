@@ -1,1 +1,134 @@
 # CPSC-481---Email-Spam-Filter
+
+## Install
+1. Open up your terminal and cd into the `interface` folder
+2. Create a new virtual environment by running (command may differ slightly depending on python configuration):
+   Windows:
+   ```
+   py -m venv .venv
+   ```
+   macOS/Linux:
+   ```
+   python3 -m venv .venv
+   ```
+3. Activate the virtual environment:
+   Windows:
+   ```
+   .venv\Scripts\activate
+   ```
+   macOS/Linux:
+   ```
+   . .venv/bin/activate
+   ```
+4. Make sure pip is up to date:
+   Windows:
+   ```
+   pip install --upgrade pip
+   pip --version
+   ```
+   macOS/Linux:
+   ```
+   pip install --upgrade pip
+   pip --version
+   ```
+5. Install from the `requirements.txt` file:
+   Windows:
+   ```
+   pip install -r requirements.txt
+   ```
+   macOS/Linux:
+   ```
+   pip install -r requirements.txt
+   ```
+6. Train the data:
+   ```
+   py training.py
+   ```
+   macOS/Linux:
+   ```
+   python3 training.py
+   ```
+
+## Run
+1. Initiated the Virual Environment (if not already initiated)
+.venv\Scripts\activate
+
+2. Run Flask
+flask --app app run --debug
+
+3. Go To the Devolopment Server provided in the terminal
+
+4. Now that you are the user interface, do whatever testing you desire; we have provided you some email test cases in the <folder name or file name> that you can start with. 
+
+
+
+## Test Emails
+
+
+* Spam
+  ```
+  Dear [Your Name],
+
+  Congratulations! You've been selected as the lucky winner of our Grand Prize Giveaway!
+
+  You've won a brand-new iPhone 13, a luxury vacation to an exotic island, and $10,000 in cash!
+
+  To claim your prize, simply click the link below and provide your personal details:
+
+  Click here to claim your prize!
+
+  Hurry, this offer expires in 24 hours! 
+
+  Best regards,
+  The Prize Patrol Team
+  ```
+
+
+
+* Spam
+  ```
+  Subject: "Forward This to 10 Friends or Bad Luck Will Follow You!"
+    Dear [Your Name],
+
+    You've received this email because you're one of the lucky few. If you break the chain, misfortune will haunt you forever. Forward this to 10 friends within the next hour, and good luck will come your way!
+
+    Sincerely,
+    Superstitious Sender
+  
+  ```
+
+* Spam
+  ```
+  Subject: "Investment Opportunity: Guaranteed 1000% Returns!"
+Hello [Your Name],
+
+I'm a wealthy individual from a foreign country, and I need your help. I have $10 million locked up in a bank, and I need someone trustworthy to help me transfer it. If you provide your bank details and a small processing fee, I'll share a portion of the funds with you. Act fast; this opportunity won't last!
+
+Best regards,
+Prince Scamalot
+  ```
+
+  
+  
+* Non Spam
+  ```
+  Dear [Your Name],
+
+Thank you for your recent purchase! We're excited to let you know that your order #12345 has been successfully processed. Here are the details:
+
+- Product: XYZ Widget
+- Quantity: 2
+- Total Amount: $99.99
+
+If you have any questions or need further assistance, feel free to reply to this email. We appreciate your business!
+
+Best regards,
+The XYZ Store Team
+
+  ```
+
+
+* non spam
+  ```
+  
+  ```
