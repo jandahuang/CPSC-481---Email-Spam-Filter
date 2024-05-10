@@ -58,7 +58,7 @@ flask --app app run --debug
 
 3. Go To the Devolopment Server provided in the terminal
 
-4. Now that you are the user interface, do whatever testing you desire; we have provided you some email test cases in the <folder name or file name> that you can start with. 
+4. Now that you are the user interface, do whatever testing you desire; we have provided you some email test cases below that you can start with. 
 
 
 
@@ -130,5 +130,30 @@ The XYZ Store Team
 
 * non spam
   ```
+  Hello [Your Name],
+
+Thank you for subscribing to our newsletter! 🎉 You're now part of our community, and we'll keep you updated on the latest news, tips, and special offers.
+
+Stay tuned for exciting content delivered straight to your inbox. If you have any preferences or topics you'd like us to cover, feel free to reply to this email.
+
+Cheers,
+The Newsletter Team
+
+  ```
+
+
+* non spam
+  ```
+  Hi [Your Name],
+
+We received a request to reset your account password. If you initiated this, please click the link below to set a new password:
+
+Reset Password
+
+If you didn't request this, please ignore this email. Your account remains secure.
+
+Regards,
+The Support Team
+
   
   ```
