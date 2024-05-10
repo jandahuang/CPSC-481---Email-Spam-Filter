@@ -107,13 +107,16 @@
 
 * Spam
   ```
-  Subject: "Forward This to 10 Friends or Bad Luck Will Follow You!"
   Dear [Your Name],
 
-  You've received this email because you're one of the lucky few. If you break the chain, misfortune will haunt you forever. Forward this to 10 friends within the next hour, and good luck will come your way!
+  We regret to inform you that your account security has been breached. Our system detected unauthorized access from an unknown location. To secure your account, please click the link below to verify your identity:
 
-  Sincerely,
-  Superstitious Sender
+  Verify Account Now
+
+  Failure to take action within 24 hours will result in permanent account suspension. Don't delay; act now!
+
+  Best regards,
+  The Security Team
   ```
 
 * Spam
@@ -131,18 +134,22 @@
   
 * Non Spam
   ```
-  Dear [Your Name],
+  subject: [CPSC 490.01] Important Notice: No Class and Final Proposal Due on upcoming Tuesday (May 7)
 
-  Thank you for your recent purchase! We're excited to let you know that your order #12345 has been successfully processed. Here are the details:
+  CSUF external service. Use caution and confirm sender.
 
-  - Product: XYZ Widget
-  - Quantity: 2
-  - Total Amount: $99.99
+  Dear everyone,
 
-  If you have any questions or need further assistance, feel free to reply to this email. We appreciate your business!
+  I would like to inform you that there will be no class on the upcoming Tuesday, May 7. Instead, your only remaining task for this course is to submit your group Final Proposal by midnight on May 7 via Canvas.
+
+  Additionally, please note that there will be no final exam for this course. You can focus your efforts on preparing for your other classes during the final exam week.
+
+  Thank you for your dedication throughout the semester. If you have any questions or need further clarification, please do not hesitate to reach out.
+
 
   Best regards,
-  The XYZ Store Team
+
+  Rong Jin
   ```
 
 
@@ -150,7 +157,7 @@
   ```
   Hello [Your Name],
 
-  Thank you for subscribing to our newsletter! 🎉 You're now part of our community, and we'll keep you updated on the latest news, tips, and special offers.
+  Thank you for subscribing to our newsletter!  You're now part of our community, and we'll keep you updated on the latest news, tips, and special offers.
 
   Stay tuned for exciting content delivered straight to your inbox. If you have any preferences or topics you'd like us to cover, feel free to reply to this email.
 
@@ -161,14 +168,15 @@
 
 * non spam
   ```
-  Hi [Your Name],
+  Hey everyone,
 
-  We received a request to reset your account password. If you initiated this, please click the link below to set a new password:
+  I've posted a study guide for the final exam that we'll walk through in our review session tomorrow. Link
 
-  Reset Password
+  I've also posted the assignment on canvas where you can upload your submission (report document and code .zip file) for your final projects. Bear in mind those are due THIS FRIDAY 5/10
 
-  If you didn't request this, please ignore this email. Your account remains secure.
+  Hopefully that's all pretty straightforward, but please let me know if you have any questions. We'll talk more about this in class tomorrow, and I'm planning to do a more traditional review session walking through the topics one at a time. That said, if the class wants me to focus on a particular topic I'll be more than happy to.
 
-  Regards,
-  The Support Team
+  Take care, and I look forward to seeing you all tomorrow,
+
+  Jeff
   ```

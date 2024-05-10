@@ -3,16 +3,11 @@ import numpy as np
 import pandas as pd
 import nltk
 import pickle
-# import matplotlib.pyplot as plt
 import string
-# from sklearn.decomposition import PCA
 import warnings
 from sklearn.model_selection import train_test_split
-# from sklearn.feature_extraction.text import CountVectorizer
-# from sklearn.pipeline import Pipeline
-# from sklearn.metrics import accuracy_score, confusion_matrix , classification_report
-# from sklearn.preprocessing import LabelEncoder
 from collections import Counter
+from sklearn.naive_bayes import MultinomialNB
 if not nltk.corpus.stopwords.words('english'):
     nltk.download('stopwords')
 from nltk.corpus import stopwords
@@ -193,8 +188,6 @@ total_emails = len(Email_dataset)
 spam_not_spam_counter = Counter(Email_dataset["Labels"])
 prior_not_spam = spam_not_spam_counter[0] / total_emails
 prior_spam = spam_not_spam_counter[1] / total_emails
-# print(prior_not_spam)
-# print(prior_spam)
 
 stop_words = set(stopwords.words('english'))
 for word in stop_words:
@@ -272,7 +265,6 @@ def calc_prob(set):
 # Remove stopwords from each paragraph in the list
 first_non_spam_body = [remove_stopwords(body) for body in Non_Spam["Email_text"]]
 first_spam_body = [remove_stopwords(body) for body in Spam["Email_text"]]
-# print(first_non_spam_body)
 
 smoothing_list = smoothing(first_non_spam_body, first_spam_body, 1, 20)
 first_non_spam_body = smoothing_list[0]
@@ -280,8 +272,6 @@ first_spam_body = smoothing_list[1]
 
 non_spam_prob = calc_prob(first_non_spam_body)
 spam_prob = calc_prob(first_spam_body)
-# for word in spam_prob:
-#     print('"' + word + '": ' + str(spam_prob[word]) + ',')
 naive_output = open('./training/naivebayes.json', 'w')
 naive_output.write(json.dumps({
     "non_spam": non_spam_prob,
@@ -293,9 +283,6 @@ naive_output.close()
 
 
 
-
-# Multinomial Naive Bayes
-from sklearn.naive_bayes import MultinomialNB
 
 bayes_model = MultinomialNB()
 bayes_model.fit(X_train_features, y_train)

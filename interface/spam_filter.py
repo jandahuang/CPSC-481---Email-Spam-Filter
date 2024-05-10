@@ -1,8 +1,4 @@
 import pickle
-# import numpy as np
-# import string
-# from sklearn.feature_extraction.text import TfidfVectorizer
-# from sklearn import feature_extraction
 import json
 import re
 import pandas as pd
@@ -25,33 +21,10 @@ def predict(input_text, model_name):
     model = "./training/{}.pkl".format(model_name)
     loaded_model, loaded_vectorizer = load_model_and_vectorizer(model, './training/vectorizer.pkl')
     
-    # inpput= list(input_text)
     my_list = input_text.split(",")
-    # print("the input for {}".format(model_name), "is: ", my_list)
     vectorized_data = loaded_vectorizer.transform(my_list)
     prediction = loaded_model.predict(vectorized_data)
     return prediction
-    # if (prediction[0]==1):
-    #     print("Spam Mail")
-    # else:
-    #     print("Normal Mail")
-
-# ====================
-# For testing purposes
-# ====================
-# Reading dataset
-# Email_dataset = pd.read_csv("spam_ham_dataset.csv")
-# predict("among us sus among us sus among us sus, I am not sus", "logistic_model")
-
-# message = string([Email_dataset['text'][4]])
-# print(Email_dataset['text'][4])
-
-# predict([Email_dataset['text'][4]], "logistic_model")
-
-# predict(message, "logistic_model")
-# ====================
-# End of testing block
-# ====================
 
 
 
@@ -89,11 +62,11 @@ def spam_filter(input_email):
     naivebayes_custom = naive_bayes(input_email)
     if naivebayes_custom:
         naivebayes_custom = "spam"
-        spam_count += 1
+        spam_count += 2
     
     else:
         naivebayes_custom = "not spam"
-        ham_count += 1
+        ham_count += 2
     
     
     
@@ -163,15 +136,3 @@ def spam_filter(input_email):
                 "random_forest": random_forest
             }
         }
-
-
-# Email_dataset = pd.read_csv("spam_ham_dataset.csv")
-# # message = Email_dataset['text'][4] # spam
-# # message = Email_dataset['text'][5] # not spam
-
-# x = 120
-# message = Email_dataset['text'][x] # not spam
-# print("This at 8 is a: ", Email_dataset['label_num'][x])
-
-# # print("the type is: ", type(message))
-# print(spam_filter(message))
