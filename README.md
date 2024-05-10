@@ -48,7 +48,8 @@
    ```
    python3 training.py
    ```
-7. Run the server (see the "Run" section)
+7. To deactivate the virtual enviroment, enter `deactivate` into the terminal with the activated virtual enviroment
+8. Run the server (see the "Run" section)
 
 ## Run
 1. Initiated the Virual Environment (if not already initiated)
