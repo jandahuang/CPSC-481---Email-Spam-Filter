@@ -25,14 +25,16 @@ def predict(input_text, model_name):
     model = "{}.pkl".format(model_name)
     loaded_model, loaded_vectorizer = load_model_and_vectorizer(model, 'vectorizer.pkl')
     
-    inpput= list(input_text)
-    vectorized_data = loaded_vectorizer.transform(inpput)
+    # inpput= list(input_text)
+    my_list = input_text.split(",")
+    # print("the input for {}".format(model_name), "is: ", my_list)
+    vectorized_data = loaded_vectorizer.transform(my_list)
     prediction = loaded_model.predict(vectorized_data)
     return prediction
     # if (prediction[0]==1):
-    #     print("Normal Mail")
-    # else:
     #     print("Spam Mail")
+    # else:
+    #     print("Normal Mail")
 
 # ====================
 # For testing purposes
@@ -97,52 +99,52 @@ def spam_filter(input_email):
     
     logistic = predict(input_email, "logistic_model")
     if logistic[0]==1:
-        logistic = "not spam"
-        ham_count += 1
-    else:
         logistic = "spam"
         spam_count += 1
+    else:
+        logistic = "not spam"
+        ham_count += 1
 
     bayes = predict(input_email, "bayes_model")
     if bayes[0]==1:
-        bayes = "not spam"
-        ham_count += 1
-    else:
         bayes = "spam"
         spam_count += 1
+    else:
+        bayes = "not spam"
+        ham_count += 1
         
 
     decision_tree = predict(input_email, "decision_tree_model")
     if decision_tree[0]==1:
-        decision_tree = "not spam"
-        ham_count += 1
-    else:
         decision_tree = "spam"
         spam_count += 1
+    else:
+        decision_tree = "not spam"
+        ham_count += 1
 
     random_forest = predict(input_email, "random_forest_model")
     if random_forest[0]==1:
-        random_forest = "not spam"
-        ham_count += 1
-    else:
         random_forest = "spam"
         spam_count += 1
+    else:
+        random_forest = "not spam"
+        ham_count += 1
 
     support_vector_model = predict(input_email, "support_vector_model")
     if support_vector_model[0]==1:
-        support_vector_model = "not spam"
-        ham_count += 1
-    else:
         support_vector_model = "spam"
         spam_count += 1
+    else:
+        support_vector_model = "not spam"
+        ham_count += 1
 
     knn = predict(input_email, "knn_model")
     if knn[0]==1:
-        knn = "not spam"
-        ham_count += 1
-    else:
         knn = "spam"
         spam_count += 1
+    else:
+        knn = "not spam"
+        ham_count += 1
 
     if spam_count > ham_count:
         result = "spam"
@@ -162,8 +164,14 @@ def spam_filter(input_email):
             }
         }
 
-# print(spam_filter(["among us sus among us sus among us sus, I am not sus"]))
 
 Email_dataset = pd.read_csv("spam_ham_dataset.csv")
-message = [Email_dataset['text'][4]]
+# message = Email_dataset['text'][4] # spam
+# message = Email_dataset['text'][5] # not spam
+
+x = 120
+message = Email_dataset['text'][x] # not spam
+print("This at 8 is a: ", Email_dataset['label_num'][x])
+
+# print("the type is: ", type(message))
 print(spam_filter(message))
