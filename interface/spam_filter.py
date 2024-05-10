@@ -1,8 +1,8 @@
 import pickle
-import numpy as np
-import string
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn import feature_extraction
+# import numpy as np
+# import string
+# from sklearn.feature_extraction.text import TfidfVectorizer
+# from sklearn import feature_extraction
 import json
 import re
 import pandas as pd
@@ -22,8 +22,8 @@ def load_model_and_vectorizer(model_path, vectorizer_path):
     return loaded_model, loaded_vectorizer
 
 def predict(input_text, model_name):
-    model = "{}.pkl".format(model_name)
-    loaded_model, loaded_vectorizer = load_model_and_vectorizer(model, 'vectorizer.pkl')
+    model = "./training/{}.pkl".format(model_name)
+    loaded_model, loaded_vectorizer = load_model_and_vectorizer(model, './training/vectorizer.pkl')
     
     # inpput= list(input_text)
     my_list = input_text.split(",")
@@ -58,7 +58,7 @@ def predict(input_text, model_name):
 # Modified Naïve Bayes
 def naive_bayes(input_email):
     # Load probs from json
-    naive_output = open('training/naivebayes.json')
+    naive_output = open('./training/naivebayes.json')
     spam_non_spam_prob = json.load(naive_output)
     naive_output.close()
     non_spam_prob = spam_non_spam_prob["non_spam"]
@@ -165,13 +165,13 @@ def spam_filter(input_email):
         }
 
 
-Email_dataset = pd.read_csv("spam_ham_dataset.csv")
-# message = Email_dataset['text'][4] # spam
-# message = Email_dataset['text'][5] # not spam
+# Email_dataset = pd.read_csv("spam_ham_dataset.csv")
+# # message = Email_dataset['text'][4] # spam
+# # message = Email_dataset['text'][5] # not spam
 
-x = 120
-message = Email_dataset['text'][x] # not spam
-print("This at 8 is a: ", Email_dataset['label_num'][x])
+# x = 120
+# message = Email_dataset['text'][x] # not spam
+# print("This at 8 is a: ", Email_dataset['label_num'][x])
 
-# print("the type is: ", type(message))
-print(spam_filter(message))
+# # print("the type is: ", type(message))
+# print(spam_filter(message))
