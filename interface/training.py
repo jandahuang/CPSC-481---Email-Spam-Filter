@@ -8,8 +8,7 @@ import warnings
 from sklearn.model_selection import train_test_split
 from collections import Counter
 from sklearn.naive_bayes import MultinomialNB
-if not nltk.corpus.stopwords.words('english'):
-    nltk.download('stopwords')
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 import json
 import re
