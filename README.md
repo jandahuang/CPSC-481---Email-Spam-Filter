@@ -155,14 +155,13 @@
 
 * non spam
   ```
-  Hello [Your Name],
+  Hey everyone,
 
-  Thank you for subscribing to our newsletter!  You're now part of our community, and we'll keep you updated on the latest news, tips, and special offers.
+  Homework 8 should now be posted. It mostly focuses on Machine Learning, although there are little bits from the section on neural networks so you may want to keep those notes handy. It's the standard quiz-style assignment with 60 minutes and 3 attempts. Please let me know if you have any questions, and I hope you all have a great weekend!
 
-  Stay tuned for exciting content delivered straight to your inbox. If you have any preferences or topics you'd like us to cover, feel free to reply to this email.
+  Take care,
 
-  Cheers,
-  The Newsletter Team
+  Jeff
   ```
 
 
