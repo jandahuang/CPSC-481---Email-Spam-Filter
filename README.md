@@ -80,6 +80,8 @@
 
 7. To shut down the server, in the terminal Flask is running in, enter CTRL + C (COMMAND + C for macOS)
 
+8. To deactivate the virtual enviroment, enter `deactivate` into the terminal with the activated virtual enviroment
+
 
 
 ## Test Emails
